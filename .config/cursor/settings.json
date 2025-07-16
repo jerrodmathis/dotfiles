@@ -1,0 +1,152 @@
+{
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "diffEditor.codeLens": true,
+    "editor.cursorBlinking": "solid",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.fontFamily": "Hack Nerd Font",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.guides.bracketPairs": true,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.tabSize": 2,
+    "editor.wordWrapColumn": 100,
+    "explorer.sortOrder": "type",
+    "files.associations": {
+        ".env": "properties"
+    },
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "prettier.jsxSingleQuote": true,
+    "prettier.printWidth": 100,
+    "prettier.requireConfig": true,
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "none",
+    "prettier.useEditorConfig": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "vsicons.presets.hideExplorerArrows": true,
+    "workbench.editor.customLabels.patterns": {
+        "**/src/**/index.tsx": "${dirname} - index.tsx",
+        "**/src/**/index.ts": "${dirname} - index.ts",
+        "**/src/**/interface.ts": "${dirname} - interface.ts",
+        "**/src/**/endpoints.ts": "${dirname} - endpoints.ts"
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.prefer#f38ba8DarkColorTheme": "Catppuccin Mocha",
+    "workbench.prefer#f38ba8LightColorTheme": "Catppuccin Latte",
+    "workbench.startupEditor": "none",
+    "git.autofetch": true,
+    "workbench.editor.tabCloseButton": "left",
+    "workbench.editor.tabActionLocation": "left",
+    "explorer.compactFolders": false,
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "cursor.cpp.disabledLanguages": [
+        "plaintext",
+        "markdown",
+        "scminput"
+    ],
+    "diffEditor.renderSideBySide": false,
+    "[typescriptreact]": {},
+    "eslint.codeActionsOnSave.rules": null,
+    "git.openRepositoryInParentFolders": "always",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "always"
+    },
+    "eslint.format.enable": true,
+    "eslint.lintTask.enable": true,
+    "githubPullRequests.pullBranch": "never",
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.neovimUseConfigFile": true,
+    "vim.neovimConfigPath": "$HOME/.config/nvim",
+    "vim.leader": "<space>",
+    "vim.hlsearch": false,
+    "vim.incsearch": true,
+    "vim.ignorecase": true,
+    "vim.smartcase": true,
+    "vim.smartRelativeLine": true,
+    "vim.cursorStylePerMode.insert": "block",
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.cursorStylePerMode.replace": "block",
+    "vim.cursorStylePerMode.visual": "block",
+    "vim.cursorStylePerMode.visualblock": "block",
+    "vim.cursorStylePerMode.visualline": "block",
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.color": "rgba(137, 180, 250, 1)",
+    "vim.scroll": 20,
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "s", "f"],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": ["<leader>", "s", "c"],
+            "commands": [
+                "workbench.action.showCommands"
+            ]
+        },
+        {
+            "before": ["<C-d>"],
+            "after": ["<C-d>", "z", "z"],
+        },
+        {
+            "before": ["<C-u>"],
+            "after": ["<C-u>", "z", "z"],
+        },
+        {
+            "before": ["<leader>", "w"],
+            "commands": [
+                "workbench.action.files.save"
+            ]
+        }
+    ],
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": ["#89b4fa", "#181825"],
+    "vim.statusBarColors.insert": ["#a6e3a1", "#1e1e2e"],
+    "vim.statusBarColors.visual": ["#cba6f7", "#1e1e2e"],
+    "vim.statusBarColors.visualline": ["#cba6f7", "#1e1e2e"],
+    "vim.statusBarColors.visualblock": ["#cba6f7", "#1e1e2e"],
+    "vim.statusBarColors.replace": ["#f38ba8", "#1e1e2e"],
+    "vim.statusBarColors.commandlineinprogress": ["#fab387", "#1e1e2e"],
+    "extensions.experimental.affinity": {
+        "vscode.vim": 1
+    },
+    "svg.preview.mode": "svg",
+    "cursor.composer.shouldAutoScrollToBottom": false,
+    "files.exclude": {
+        "**/node_modules": true
+    },
+    "extensions.ignoreRecommendations": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#89b4fa",
+        "statusBar.noFolderBackground": "#89b4fa",
+        "statusBar.debuggingBackground": "#89b4fa",
+        "statusBar.foreground": "#181825",
+        "statusBar.debuggingForeground": "#181825"
+    },
+    "terminal.external.osxExec": "Ghostty.app",
+    "terminal.integrated.fontSize": 14,
+    "cursor.terminal.usePreviewBox": true,
+    "workbench.editor.enablePreview": false,
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-s>": false,
+        "<C-z>": false
+    },
+}
