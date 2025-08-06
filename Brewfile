@@ -1,30 +1,23 @@
-# Taps
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
-
-# Binaries
 brew 'bash'
+brew 'btop'
 brew 'coreutils'
+brew 'node'
+brew 'gemini-cli'
 brew 'git'
 brew 'neovim'
+brew 'nvm'
 brew 'starship'
 brew 'stow'
 brew 'tmux'
-brew 'zsh'
-
-# Development
-brew 'btop'
-brew 'gemini-cli'
-brew 'node'
-brew 'nvm'
 brew 'yarn'
+brew 'zsh'
 
 # Apps
 cask '1password'
-brew '1password-cli'
+cask 'claude-code'
 cask 'cursor'
 cask 'discord'
-cask 'docker'
+cask 'docker-desktop'
 cask 'figma'
 cask 'ghostty'
 cask 'keymapp'
@@ -36,4 +29,13 @@ cask 'raycast'
 cask 'rectangle-pro'
 cask 'spotify'
 
-# Fonts
+# VSCode Extensions
+vscode 'alexdauenhauer.catppuccin-noctis-icons'
+vscode 'catppuccin.catppuccin-vsc'
+vscode 'christian-kohler.path-intellisense'
+vscode 'dbaeumer.vscode-eslint'
+vscode 'eamodio.gitlens'
+vscode 'esbenp.prettier-vscode'
+vscode 'github.vscode-pull-request-github'
+vscode 'jock.svg'
+vscode 'vscodevim.vim'
