@@ -1,14 +1,24 @@
 {
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "diffEditor.codeLens": true,
+    // THEME
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin noctis icons",
+    "catppuccin-noctis-icons.hidesExplorerArrows": false,
+
+    // PRETTIER
+    "prettier.semi": true,
+    "prettier.arrowParens": "always",
+    "prettier.bracketSpacing": true,
+    "prettier.trailingComma": "all",
+    "prettier.tabWidth": 2,
+    "prettier.printWidth": 80,
+    "prettier.singleQuote": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.quoteProps": "as-needed",
+    "prettier.bracketSameLine": false,
+    "prettier.requireConfig": true,
+    "prettier.useEditorConfig": false,
+
+    // EDITOR
     "editor.cursorBlinking": "solid",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.fontFamily": "Hack Nerd Font",
@@ -20,54 +30,11 @@
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "none",
     "editor.tabSize": 2,
-    "editor.wordWrapColumn": 100,
+    "editor.wordWrapColumn": 80,
     "explorer.sortOrder": "type",
-    "files.associations": {
-        ".env": "properties"
-    },
-    "git.confirmSync": false,
-    "git.enableSmartCommit": true,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "prettier.jsxSingleQuote": true,
-    "prettier.printWidth": 100,
-    "prettier.requireConfig": true,
-    "prettier.singleQuote": true,
-    "prettier.trailingComma": "none",
-    "prettier.useEditorConfig": false,
-    "security.workspace.trust.untrustedFiles": "open",
-    "terminal.integrated.defaultProfile.windows": "Git Bash",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "vsicons.presets.hideExplorerArrows": true,
-    "workbench.editor.customLabels.patterns": {
-        "**/src/**/index.tsx": "${dirname} - index.tsx",
-        "**/src/**/index.ts": "${dirname} - index.ts",
-        "**/src/**/interface.ts": "${dirname} - interface.ts",
-        "**/src/**/endpoints.ts": "${dirname} - endpoints.ts"
-    },
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.prefer#f38ba8DarkColorTheme": "Catppuccin Mocha",
-    "workbench.prefer#f38ba8LightColorTheme": "Catppuccin Latte",
-    "workbench.startupEditor": "none",
-    "git.autofetch": true,
-    "workbench.editor.tabCloseButton": "left",
     "workbench.editor.tabActionLocation": "left",
-    "explorer.compactFolders": false,
-    "workbench.colorTheme": "Catppuccin Mocha",
-    "cursor.cpp.disabledLanguages": [
-        "plaintext",
-        "markdown",
-        "scminput"
-    ],
-    "diffEditor.renderSideBySide": false,
-    "[typescriptreact]": {},
-    "eslint.codeActionsOnSave.rules": null,
-    "git.openRepositoryInParentFolders": "always",
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "always"
-    },
-    "eslint.format.enable": true,
-    "eslint.lintTask.enable": true,
-    "githubPullRequests.pullBranch": "never",
+
+    // VIM
     "vim.enableNeovim": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
     "vim.neovimUseConfigFile": true,
@@ -127,26 +94,37 @@
     "extensions.experimental.affinity": {
         "vscode.vim": 1
     },
-    "svg.preview.mode": "svg",
-    "cursor.composer.shouldAutoScrollToBottom": false,
-    "files.exclude": {
-        "**/node_modules": true
-    },
-    "extensions.ignoreRecommendations": true,
     "workbench.colorCustomizations": {
-        "statusBar.background": "#89b4fa",
-        "statusBar.noFolderBackground": "#89b4fa",
-        "statusBar.debuggingBackground": "#89b4fa",
-        "statusBar.foreground": "#181825",
-        "statusBar.debuggingForeground": "#181825"
+        "statusBar.background": "#cba6f7",
+        "statusBar.noFolderBackground": "#cba6f7",
+        "statusBar.debuggingBackground": "#cba6f7",
+        "statusBar.foreground": "#1e1e2e",
+        "statusBar.debuggingForeground": "#1e1e2e"
     },
-    "terminal.external.osxExec": "Ghostty.app",
-    "terminal.integrated.fontSize": 14,
-    "cursor.terminal.usePreviewBox": true,
-    "workbench.editor.enablePreview": false,
     "vim.handleKeys": {
         "<C-d>": true,
         "<C-s>": false,
         "<C-z>": false
     },
+
+    // GIT
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+
+    // OTHER
+    "window.commandCenter": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.next": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/node_modules": true,
+        "**/public": true
+    },
+    "extensions.ignoreRecommendations": true,
+    "explorer.compactFolders": false,
 }
