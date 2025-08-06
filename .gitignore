@@ -1,0 +1,12 @@
+.claude/
+!.claude/settings.json
+
+.gemini/
+!.gemini/GEMINI.md
+!.gemini/settings.json
+
+.config/configstore/
+.config/raycast/extensions/
+.config/temporalio/
+
+.zshenv
