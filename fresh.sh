@@ -19,8 +19,7 @@ fi
 brew update
 
 # Install all dependencies with bundle (see Brewfile)
-brew tap homebrew/bundle
-brew bundle --file ./Brewfile
+brew bundle
 
 # Create directories
 mkdir $HOME/code
