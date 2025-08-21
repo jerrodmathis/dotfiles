@@ -7,7 +7,9 @@
 !.gemini/settings.json
 
 .config/configstore/
+.config/git/
 .config/raycast/extensions/
+.config/tcld/
 .config/temporalio/
 
 .zshenv
