@@ -28,6 +28,9 @@ mkdir $HOME/code
 mkdir $HOME/code/intellistack
 mkdir $HOME/code/jerrodmathis
 
+# Generate SSH keys
+./github-ssh.sh
+
 # Clone repositories
 ./clone.sh
 
