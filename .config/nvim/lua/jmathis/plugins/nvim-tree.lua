@@ -6,6 +6,14 @@ return {
   },
   config = function()
     require('nvim-tree').setup {
+      filters = {
+        dotfiles = false,
+      },
+      git = {
+        enable = true,
+        ignore = false,
+        timeout = 500,
+      },
       renderer = {
         highlight_git = 'all',
         highlight_modified = 'all',
