@@ -1,6 +1,10 @@
 alias ui="cd $HOME/code/intellistack/odin-ui/"
 alias da="cd $HOME/code/intellistack/daedalus/"
 alias wf="cd $HOME/code/intellistack/odin-workflows/"
+alias wfs="cd $HOME/code/intellistack/odin-workflows-schema/"
 
 alias vim="nvim"
 alias py="python3"
+alias cc="claude"
+alias pn="pnpm"
+alias cx="codex"
