@@ -4,6 +4,7 @@ alias wf="cd $HOME/code/intellistack/odin-workflows/"
 alias wfs="cd $HOME/code/intellistack/odin-workflows-schema/"
 
 alias vim="nvim"
+alias py="python3"
 alias cc="claude"
 alias pn="pnpm"
 alias cx="codex"
