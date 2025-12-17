@@ -1,3 +1,0 @@
-return {
-  'gurpreetatwal/vim-avro',
-}

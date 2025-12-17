@@ -54,3 +54,5 @@ vim.scrolloff = 10
 vim.opt.colorcolumn = '80'
 
 vim.opt.confirm = true
+
+vim.o.laststatus = 3
