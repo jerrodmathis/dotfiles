@@ -104,6 +104,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH=$PATH:$HOME/go/bin
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="$HOME:/.local/bin:$PATH"
 
 autoload -U add-zsh-hook
 

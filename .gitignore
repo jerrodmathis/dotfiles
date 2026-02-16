@@ -9,7 +9,10 @@
 .config/configstore/
 .config/git/
 .config/raycast/extensions/
+.config/stack-sandbox/
 .config/tcld/
 .config/temporalio/
+.config/tmux/
+!.config/tmux/tmux.conf
 
 .zshenv

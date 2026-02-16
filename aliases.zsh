@@ -1,10 +1,23 @@
+SCRIPTS=$HOME/code/jerrodmathis/scripts
+
 alias ui="cd $HOME/code/intellistack/odin-ui/"
+alias uic="cd $HOME/code/intellistack/odin-ui/packages/common/"
+alias uis="cd $HOME/code/intellistack/odin-ui/packages/session-app/"
+alias uiw="cd $HOME/code/intellistack/odin-ui/packages/web-app/"
 alias da="cd $HOME/code/intellistack/daedalus/"
 alias wf="cd $HOME/code/intellistack/odin-workflows/"
 alias wfs="cd $HOME/code/intellistack/odin-workflows-schema/"
 
+alias k="kubectl"
+alias sb="supabase"
 alias vim="nvim"
 alias py="python3"
 alias cc="claude"
 alias pn="pnpm"
 alias cx="codex"
+alias wf-dbt-east="tsh db connect postgres-ro-testing-odin-eks-us-east-2 --db-user=fs_superuser --db-name=workflows"
+alias wf-dbt-west="tsh db connect postgres-ro-testing-odin-eks-us-west-2 --db-user=fs_superuser --db-name=workflows"
+alias wf-dbs="tsh db connect postgres-ro-staging-odin-eks-us-west-2 --db-user=fs_superuser --db-name=workflows"
+alias kpf="bash $SCRIPTS/kpf.sh"
+alias wf-builder-mirrord="mirrord exec -f .mirrord/sandbox/workflows/mirrord.json yarn run start:sandbox"
+alias wf-session-mirrord="mirrord exec -f .mirrord/sandbox/workflows-session/mirrord.json yarn run session:sandbox"

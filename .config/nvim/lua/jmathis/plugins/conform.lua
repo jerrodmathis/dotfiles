@@ -32,6 +32,7 @@ return {
       typescriptreact = { 'prettier' },
       css = { 'prettier' },
       html = { 'prettier' },
+      yml = { 'prettier' },
       yaml = { 'prettier' },
       markdown = { 'prettier' },
       graphql = { 'prettier' },

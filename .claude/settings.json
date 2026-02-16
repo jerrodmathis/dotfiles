@@ -1,3 +1,5 @@
 {
-  "includeCoAuthoredBy": false
+  "includeCoAuthoredBy": false,
+  "model": "opus[1m]",
+  "alwaysThinkingEnabled": true
 }

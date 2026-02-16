@@ -158,6 +158,7 @@ return {
             },
           },
         },
+        postgres_lsp = {},
         ts_ls = {},
       }
 

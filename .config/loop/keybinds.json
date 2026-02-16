@@ -1,0 +1,243 @@
+{
+  "actions" : [
+    {
+      "direction" : "BottomLeftQuarter",
+      "keybind" : [
+        45
+      ]
+    },
+    {
+      "direction" : "BottomRightQuarter",
+      "keybind" : [
+        41
+      ]
+    },
+    {
+      "cycle" : [
+        {
+          "direction" : "AlmostMaximize",
+          "keybind" : [
+
+          ]
+        },
+        {
+          "direction" : "Center",
+          "keybind" : [
+
+          ]
+        },
+        {
+          "direction" : "HorizontalCenterHalf",
+          "keybind" : [
+
+          ]
+        },
+        {
+          "direction" : "HorizontalCenterThird",
+          "keybind" : [
+
+          ]
+        }
+      ],
+      "direction" : "Cycle",
+      "keybind" : [
+        34
+      ],
+      "name" : "Center Cycle"
+    },
+    {
+      "cycle" : [
+        {
+          "direction" : "LeftHalf",
+          "keybind" : [
+
+          ]
+        },
+        {
+          "direction" : "LeftThird",
+          "keybind" : [
+
+          ]
+        },
+        {
+          "direction" : "LeftThreeFourths",
+          "keybind" : [
+
+          ]
+        },
+        {
+          "direction" : "LeftTwoThirds",
+          "keybind" : [
+
+          ]
+        }
+      ],
+      "direction" : "Cycle",
+      "keybind" : [
+        40
+      ],
+      "name" : "Left Cycle"
+    },
+    {
+      "cycle" : [
+        {
+          "direction" : "RightHalf",
+          "keybind" : [
+
+          ]
+        },
+        {
+          "direction" : "RightThird",
+          "keybind" : [
+
+          ]
+        },
+        {
+          "direction" : "RightThreeFourths",
+          "keybind" : [
+
+          ]
+        },
+        {
+          "direction" : "RightTwoThirds",
+          "keybind" : [
+
+          ]
+        }
+      ],
+      "direction" : "Cycle",
+      "keybind" : [
+        46
+      ],
+      "name" : "Right Cycle"
+    },
+    {
+      "direction" : "FillAvailableSpace",
+      "keybind" : [
+        12
+      ]
+    },
+    {
+      "direction" : "FocusDown",
+      "keybind" : [
+        7
+      ]
+    },
+    {
+      "direction" : "FocusLeft",
+      "keybind" : [
+        29
+      ]
+    },
+    {
+      "direction" : "FocusRight",
+      "keybind" : [
+        8
+      ]
+    },
+    {
+      "direction" : "FocusUp",
+      "keybind" : [
+        6
+      ]
+    },
+    {
+      "direction" : "Hide",
+      "keybind" : [
+        2
+      ]
+    },
+    {
+      "direction" : "Larger",
+      "keybind" : [
+        25
+      ]
+    },
+    {
+      "direction" : "LeftHalf",
+      "keybind" : [
+        38
+      ]
+    },
+    {
+      "direction" : "Maximize",
+      "keybind" : [
+        13
+      ]
+    },
+    {
+      "direction" : "Minimize",
+      "keybind" : [
+        0
+      ]
+    },
+    {
+      "direction" : "MinimizeOthers",
+      "keybind" : [
+        1
+      ]
+    },
+    {
+      "direction" : "NextScreen",
+      "keybind" : [
+        48
+      ]
+    },
+    {
+      "direction" : "PreviousScreen",
+      "keybind" : [
+        50
+      ]
+    },
+    {
+      "direction" : "RightHalf",
+      "keybind" : [
+        37
+      ]
+    },
+    {
+      "direction" : "Smaller",
+      "keybind" : [
+        3
+      ]
+    },
+    {
+      "anchor" : 6,
+      "direction" : "Stash",
+      "height" : 80,
+      "keybind" : [
+        5
+      ],
+      "name" : "",
+      "positionMode" : 0,
+      "sizeMode" : 1,
+      "unit" : 1,
+      "width" : 80
+    },
+    {
+      "direction" : "TopLeftQuarter",
+      "keybind" : [
+        32
+      ]
+    },
+    {
+      "direction" : "TopRightQuarter",
+      "keybind" : [
+        31
+      ]
+    },
+    {
+      "direction" : "Unstash",
+      "keybind" : [
+        15
+      ]
+    }
+  ],
+  "triggerKey" : [
+    55,
+    56,
+    58,
+    59
+  ],
+  "version" : "1.4.2"
+}
