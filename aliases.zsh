@@ -9,6 +9,7 @@ alias wf="cd $HOME/code/intellistack/odin-workflows/"
 alias wfs="cd $HOME/code/intellistack/odin-workflows-schema/"
 
 alias k="kubectl"
+alias gg="lazygit"
 alias sb="supabase"
 alias vim="nvim"
 alias py="python3"

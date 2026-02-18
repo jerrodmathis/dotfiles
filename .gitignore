@@ -1,8 +1,9 @@
-.claude/
+.claude/*
 !.claude/CLAUDE.md
 !.claude/settings.json
+!.claude/statusline.sh
 
-.gemini/
+.gemini/*
 !.gemini/GEMINI.md
 !.gemini/settings.json
 
