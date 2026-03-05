@@ -1,0 +1,12 @@
+<%
+  root = File.expand_path(@args[0] || Dir.pwd)
+%>
+
+name: local-dev
+root: <%= root %>
+
+windows:
+  - editor: nvim .
+  - git: lazygit
+  - opencode: opencode
+  - shell:

@@ -77,6 +77,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# editor
+export EDITOR=vim
+
 # starship
 export STARSHIP_CONFIG="$DOTFILES/.config/starship/starship.toml"
 
