@@ -2,7 +2,9 @@ import { homedir } from "os";
 import { join } from "path";
 
 export const NotificationPlugin = async ({ $, client }) => {
-  const soundPath = join(homedir(), ".config/opencode/sounds/gow_active_reload.mp3");
+  const soundsDir = join(homedir(), ".config/opencode/sounds");
+  const idleSound = join(soundsDir, "go-ahead-do-your-thing.mp3");
+  const attentionSound = join(soundsDir, "chief.mp3");
 
   // Check if a session is a main (non-subagent) session
   const isMainSession = async (sessionID) => {
@@ -18,17 +20,22 @@ export const NotificationPlugin = async ({ $, client }) => {
 
   return {
     event: async ({ event }) => {
-      // Only notify for main session events, not background subagents
-      if (event.type === "session.idle") {
-        const sessionID = event.properties.sessionID;
-        if (await isMainSession(sessionID)) {
-          await $`afplay ${soundPath}`;
+      // Session finished processing (replaces deprecated session.idle)
+      if (event.type === "session.status") {
+        const { sessionID, status } = event.properties;
+        if (status.type === "idle" && (await isMainSession(sessionID))) {
+          await $`afplay ${idleSound}`;
         }
       }
 
-      // Permission prompt created
+      // Permission prompt — needs user attention
       if (event.type === "permission.asked") {
-        await $`afplay ${soundPath}`;
+        await $`afplay ${attentionSound}`;
+      }
+
+      // Question asked — agent needs user input
+      if (event.type === "question.asked") {
+        await $`afplay ${attentionSound}`;
       }
     },
   };
