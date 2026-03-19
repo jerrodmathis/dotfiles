@@ -8,6 +8,7 @@
 - **Abstractions**: Consciously constrained, pragmatically parameterised, doggedly documented
 
 ### **ENTROPY REMINDER**
+
 This codebase will outlive you. Every shortcut you take becomes
 someone else's burden. Every hack compounds into technical debt
 that slows the whole team down.
@@ -17,7 +18,6 @@ project. The patterns you establish will be copied. The corners
 you cut will be cut again.
 
 **Fight entropy. Leave the codebase better than you found it.**
-
 
 ## Testing
 
@@ -38,10 +38,15 @@ you cut will be cut again.
 ## Specialized Subagents
 
 ### Oracle
+
 Invoke for: code review, architecture decisions, debugging analysis, refactor planning, second opinion.
 
 ### Librarian
+
 Invoke for: understanding 3rd party libraries/packages, exploring remote repositories, discovering open source patterns.
 
 ### Overseer
+
 Invoke for: task orchestration, milestone/task/subtask management, finding next ready work, recording learnings, tracking multi-session work.
+
+**NEVER call `tasks.start()` or `tasks.complete()`** — these have VCS side effects (auto-commits, branch creation, detached HEAD). Use Overseer strictly for CRUD: `create`, `get`, `list`, `nextReady`, `update`, `cancel`, `archive`, `delete`, `search`, `tree`, `progress`, `block`, `unblock`. Manage git/jj manually.

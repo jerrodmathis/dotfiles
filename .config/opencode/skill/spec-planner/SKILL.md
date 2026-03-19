@@ -186,8 +186,8 @@ Open Questions:
 ### Write Spec to File (MANDATORY)
 
 1. Derive filename from feature/decision name (kebab-case)
-2. Write spec to `~/code/jerrodmathis/specs/<filename>.md`
-3. Confirm: `Spec written to: ~/code/jerrodmathis/specs/<filename>.md`
+2. Write spec to `~/vaults/development/specs/<filename>.md`
+3. Confirm: `Spec written to: ~/vaults/development/specs/<filename>.md`
 
 ---
 
