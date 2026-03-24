@@ -24,9 +24,8 @@ you cut will be cut again.
 - Write tests that verify semantically correct behavior
 - **Failing tests are acceptable** when they expose genuine bugs and test correct behavior
 
-## Git, jj,VCS, SCM,Pull Requests, Commits
+## Git, VCS, SCM, Pull Requests, Commits
 
-- **ALWAYS check for `.jj/` dir before ANY VCS command** - if present, use jj not git
 - **Never** add Claude to attribution or as a contributor PRs, commits, messages, or PR descriptions
 - **gh CLI available** for GitHub operations (PRs, issues, etc.)
 - **glab CLI available** for GitLab operations (PRs, issues, etc.)
@@ -49,4 +48,4 @@ Invoke for: understanding 3rd party libraries/packages, exploring remote reposit
 
 Invoke for: task orchestration, milestone/task/subtask management, finding next ready work, recording learnings, tracking multi-session work.
 
-**NEVER call `tasks.start()` or `tasks.complete()`** — these have VCS side effects (auto-commits, branch creation, detached HEAD). Use Overseer strictly for CRUD: `create`, `get`, `list`, `nextReady`, `update`, `cancel`, `archive`, `delete`, `search`, `tree`, `progress`, `block`, `unblock`. Manage git/jj manually.
+**NEVER call `tasks.start()` or `tasks.complete()`** — these have VCS side effects (auto-commits, branch creation, detached HEAD). Use Overseer strictly for CRUD: `create`, `get`, `list`, `nextReady`, `update`, `cancel`, `archive`, `delete`, `search`, `tree`, `progress`, `block`, `unblock`. Manage git manually.

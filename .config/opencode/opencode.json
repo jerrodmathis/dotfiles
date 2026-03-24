@@ -74,9 +74,6 @@
       "head *": "allow",
       "hostname": "allow",
       "id": "allow",
-      "jj *": "allow",
-      "jj git push*": "ask",
-      "jj gp*": "ask",
       "jq *": "allow",
       "ls *": "allow",
       "make *": "allow",
@@ -143,24 +140,20 @@
     },
     "opensrc": {
       "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "opensrc-mcp"
-      ],
+      "command": ["npx", "-y", "opensrc-mcp"],
       "enabled": true
     },
     "overseer": {
       "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@dmmulroy/overseer",
-        "mcp"
-      ],
+      "command": ["npx", "-y", "@dmmulroy/overseer", "mcp"],
       "environment": {
         "OVERSEER_DB_PATH": "/Users/jerrod.mathis/.local/share/overseer/tasks.db"
       },
+      "enabled": true
+    },
+    "figma": {
+      "type": "remote",
+      "url": "http://127.0.0.1:3845/mcp",
       "enabled": true
     }
   }

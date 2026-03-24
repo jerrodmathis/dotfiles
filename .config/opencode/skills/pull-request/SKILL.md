@@ -25,7 +25,7 @@ Every PR description has exactly two sections:
 
 ## Workflow
 
-1. **Detect VCS** - run vcs-detect before any VCS commands
+1. **Use git** for all VCS commands
 2. **Gather context** - diff the current branch against base to understand all changes
 3. **Determine issue section** - use JIRA ticket if provided, otherwise write short summary
 4. **Build changelog** - concise bullet list from the diff
@@ -64,13 +64,8 @@ If the JIRA base URL is unknown, ask the user once and reuse for the session. If
 Analyze **all commits** on the branch since divergence from base, not just the latest commit.
 
 ```
-# git
 git log --oneline main..HEAD
 git diff main...HEAD
-
-# jj
-jj log -r 'trunk()..@'
-jj diff -r 'trunk()..@'
 ```
 
 ## Creating the PR
