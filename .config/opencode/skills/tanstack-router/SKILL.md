@@ -1,113 +1,133 @@
 ---
 name: tanstack-router-best-practices
 description: TanStack Router best practices for type-safe routing, data loading, search params, and navigation. Activate when building React applications with complex routing needs.
+source: "@tanstack/router-core@1.168.9 (TanStack Intent Registry)"
 ---
 
-# TanStack Router Best Practices
+# TanStack Router Core
 
-Comprehensive guidelines for implementing TanStack Router patterns in React applications. These rules optimize type safety, data loading, navigation, and code organization.
+TanStack Router is a type-safe router for React and Solid with built-in SWR caching, JSON-first search params, file-based route generation, and end-to-end type inference. The core is framework-agnostic; React and Solid bindings layer on top.
 
-## When to Apply
+> **CRITICAL**: TanStack Router types are FULLY INFERRED. Never cast, never annotate inferred values. This is the #1 AI agent mistake.
 
-- Setting up application routing
-- Creating new routes and layouts
-- Implementing search parameter handling
-- Configuring data loaders
-- Setting up code splitting
-- Integrating with TanStack Query
-- Refactoring navigation patterns
+> **CRITICAL**: TanStack Router is CLIENT-FIRST. Loaders run on the client by default, NOT server-only like Remix/Next.js. Do not confuse TanStack Router APIs with Next.js or React Router.
 
-## Rule Categories by Priority
+## Sub-Skills
 
-| Priority | Category | Rules | Impact |
-|----------|----------|-------|--------|
-| CRITICAL | Type Safety | 4 rules | Prevents runtime errors and enables refactoring |
-| CRITICAL | Route Organization | 5 rules | Ensures maintainable route structure |
-| HIGH | Router Config | 1 rule | Global router defaults |
-| HIGH | Data Loading | 6 rules | Optimizes data fetching and caching |
-| HIGH | Search Params | 5 rules | Enables type-safe URL state |
-| HIGH | Error Handling | 1 rule | Handles 404 and errors gracefully |
-| MEDIUM | Navigation | 5 rules | Improves UX and accessibility |
-| MEDIUM | Code Splitting | 3 rules | Reduces bundle size |
-| MEDIUM | Preloading | 3 rules | Improves perceived performance |
-| LOW | Route Context | 3 rules | Enables dependency injection |
+| Task | Sub-Skill |
+|------|-----------|
+| Validate, read, write, transform search params | rules/search-params.md |
+| Dynamic segments, splats, optional params | rules/path-params.md |
+| Link, useNavigate, preloading, blocking | rules/navigation.md |
+| Route loaders, SWR caching, context, deferred data | rules/data-loading.md |
+| Auth guards, RBAC, beforeLoad redirects | rules/auth-and-guards.md |
+| Automatic and manual code splitting | rules/code-splitting.md |
+| 404 handling, error boundaries, notFound() | rules/not-found-and-errors.md |
+| Inference, Register, from narrowing, TS perf | rules/type-safety.md |
+| Streaming/non-streaming SSR, hydration, head mgmt | rules/ssr.md |
 
-## Quick Reference
+## Quick Decision Tree
 
-### Type Safety (Prefix: `ts-`)
+```
+Need to add/read/write URL query parameters?
+  -> rules/search-params.md
 
-- `ts-register-router` — Register router type for global inference
-- `ts-use-from-param` — Use `from` parameter for type narrowing
-- `ts-route-context-typing` — Type route context with createRootRouteWithContext
-- `ts-query-options-loader` — Use queryOptions in loaders for type inference
+Need dynamic URL segments like /posts/$postId?
+  -> rules/path-params.md
 
-### Router Config (Prefix: `router-`)
+Need to create links or navigate programmatically?
+  -> rules/navigation.md
 
-- `router-default-options` — Configure router defaults (scrollRestoration, defaultErrorComponent, etc.)
+Need to fetch data for a route?
+  Is it client-side only or client+server?
+    -> rules/data-loading.md
+  Using TanStack Query as external cache?
+    -> compositions/router-query (separate skill)
 
-### Route Organization (Prefix: `org-`)
+Need to protect routes behind auth?
+  -> rules/auth-and-guards.md
 
-- `org-file-based-routing` — Prefer file-based routing for conventions
-- `org-route-tree-structure` — Follow hierarchical route tree patterns
-- `org-pathless-layouts` — Use pathless routes for shared layouts
-- `org-index-routes` — Understand index vs layout routes
-- `org-virtual-routes` — Understand virtual file routes
+Need to reduce bundle size per route?
+  -> rules/code-splitting.md
 
-### Data Loading (Prefix: `load-`)
+Need custom 404 or error handling?
+  -> rules/not-found-and-errors.md
 
-- `load-use-loaders` — Use route loaders for data fetching
-- `load-loader-deps` — Define loaderDeps for cache control
-- `load-ensure-query-data` — Use ensureQueryData with TanStack Query
-- `load-deferred-data` — Split critical and non-critical data
-- `load-error-handling` — Handle loader errors appropriately
-- `load-parallel` — Leverage parallel route loading
+Having TypeScript issues or performance problems?
+  -> rules/type-safety.md
 
-### Search Params (Prefix: `search-`)
+Need server-side rendering?
+  -> rules/ssr.md
+```
 
-- `search-validation` — Always validate search params
-- `search-type-inheritance` — Leverage parent search param types
-- `search-middleware` — Use search param middleware
-- `search-defaults` — Provide sensible defaults
-- `search-custom-serializer` — Configure custom search param serializers
+## Minimal Working Example
 
-### Error Handling (Prefix: `err-`)
+```tsx
+// src/routes/__root.tsx
+import { createRootRoute, Outlet } from '@tanstack/react-router'
 
-- `err-not-found` — Handle not-found routes properly
+export const Route = createRootRoute({
+  component: () => <Outlet />,
+})
+```
 
-### Navigation (Prefix: `nav-`)
+```tsx
+// src/routes/index.tsx
+import { createFileRoute } from '@tanstack/react-router'
 
-- `nav-link-component` — Prefer Link component for navigation
-- `nav-active-states` — Configure active link states
-- `nav-use-navigate` — Use useNavigate for programmatic navigation
-- `nav-relative-paths` — Understand relative path navigation
-- `nav-route-masks` — Use route masks for modal URLs
+export const Route = createFileRoute('/')({
+  component: () => <h1>Home</h1>,
+})
+```
 
-### Code Splitting (Prefix: `split-`)
+```tsx
+// src/router.tsx
+import { createRouter } from '@tanstack/react-router'
+import { routeTree } from './routeTree.gen'
 
-- `split-lazy-routes` — Use .lazy.tsx for code splitting
-- `split-critical-path` — Keep critical config in main route file
-- `split-auto-splitting` — Enable autoCodeSplitting when possible
+const router = createRouter({ routeTree })
 
-### Preloading (Prefix: `preload-`)
+// REQUIRED for type safety — without this, Link/useNavigate have no autocomplete
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: typeof router
+  }
+}
 
-- `preload-intent` — Enable intent-based preloading
-- `preload-stale-time` — Configure preload stale time
-- `preload-manual` — Use manual preloading strategically
+export default router
+```
 
-### Route Context (Prefix: `ctx-`)
+```tsx
+// src/main.tsx
+import { RouterProvider } from '@tanstack/react-router'
+import router from './router'
 
-- `ctx-root-context` — Define context at root route
-- `ctx-before-load` — Extend context in beforeLoad
-- `ctx-dependency-injection` — Use context for dependency injection
+function App() {
+  return <RouterProvider router={router} />
+}
+```
 
-## How to Use
+## Common Mistakes
 
-Each rule file in the `rules/` directory contains:
-1. **Explanation** — Why this pattern matters
-2. **Bad Example** — Anti-pattern to avoid
-3. **Good Example** — Recommended implementation
-4. **Context** — When to apply or skip this rule
+### HIGH: createFileRoute path string must match the file path
 
-## Full Reference
+The Vite plugin manages the path string in createFileRoute. Do not change it manually — it must match the file's location under src/routes/:
 
-See individual rule files in `rules/` directory for detailed guidance and code examples.
+```tsx
+// File: src/routes/posts/$postId.tsx
+export const Route = createFileRoute('/posts/$postId')({
+  // ✅ matches file path
+  component: PostPage,
+})
+
+export const Route = createFileRoute('/post/$postId')({
+  // ❌ silent mismatch
+  component: PostPage,
+})
+```
+
+The plugin auto-generates this string. If you rename a route file, the plugin updates it. Never edit the path string by hand.
+
+## Version Note
+
+This skill targets @tanstack/router-core v1.168.9. APIs are stable. Splat routes use $ (not *); the * compat alias will be removed in v2.
