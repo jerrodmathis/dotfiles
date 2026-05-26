@@ -1,12 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": true,
-  "agent": {
-    "plan": {
-      "model": "openai/gpt-5.4",
-      "variant": "high"
-    }
-  },
   "permission": {
     "external_directory": {
       "*": "ask",
@@ -200,6 +194,11 @@
       "type": "remote",
       "url": "http://127.0.0.1:3845/mcp",
       "enabled": true
+    },
+    "sentry": {
+      "type": "remote",
+      "url": "https://mcp.sentry.dev/mcp",
+      "oauth": {}
     }
   }
 }

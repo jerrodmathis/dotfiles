@@ -148,6 +148,13 @@ return {
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       local servers = {
+        eslint = {
+          root_dir = require('lspconfig.util').root_pattern('eslint.config.js', 'eslint.config.cjs', 'eslint.config.mjs', 'package.json', '.git'),
+          settings = {
+            experimental = { useFlatConfig = true },
+            workingDirectory = { mode = 'auto' },
+          },
+        },
         gopls = {},
         lua_ls = {
           settings = {

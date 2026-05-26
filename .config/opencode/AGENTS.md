@@ -48,4 +48,28 @@ Invoke for: understanding 3rd party libraries/packages, exploring remote reposit
 
 Invoke for: task orchestration, milestone/task/subtask management, finding next ready work, recording learnings, tracking multi-session work.
 
-**NEVER call `tasks.start()` or `tasks.complete()`** — these have VCS side effects (auto-commits, branch creation, detached HEAD). Use Overseer strictly for CRUD: `create`, `get`, `list`, `nextReady`, `update`, `cancel`, `archive`, `delete`, `search`, `tree`, `progress`, `block`, `unblock`. Manage git manually.
+#### Overseer + Git Workflow
+
+**Before `tasks.start()`:**
+
+- Remove empty directories so the git tree is completely clean
+- Verify the target branch (e.g. `feat/...`) is checked out and clean
+
+**`tasks.start()` behavior:**
+
+- Creates a task branch/bookmark from current HEAD
+- Records the start commit SHA
+
+**`tasks.complete()` behavior:**
+
+- Commits staged + unstaged changes on the task branch
+- Marks the task complete with result/learnings
+- **Leaves checkout detached at the start commit** (not the new commit)
+- Does NOT apply the commit to the target branch
+
+**After `tasks.complete()`:**
+
+- Switch back to the target branch
+- `git cherry-pick <commitSha>` from the complete result
+- `git commit --amend -m "<conventional commit message>"` to reword
+- Verify with `git log -1 --oneline`
