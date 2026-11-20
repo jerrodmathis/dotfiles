@@ -42,3 +42,12 @@ Write the comment itself in a direct style:
 Preview the final Markdown before posting so quoting and blank lines render as
 shown. After posting, verify that GitHub returned the comment or review URL.
 Resolve a review thread only after its response was posted successfully.
+
+## Review defaults
+
+- Inline comments only. No review body unless asked.
+- One comment per location, anchored on a line in the diff.
+- Prefix nitpicks with `nit:`.
+- Approve with no body.
+- As the reviewer, resolve threads the author fixed without a reply. The
+  rule above about posting first applies to threads you answer.

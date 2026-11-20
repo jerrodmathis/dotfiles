@@ -1,6 +1,6 @@
 ---
 name: babysit-pr
-description: Monitor a pull request through review and CI. Use when the user asks to monitor, watch, or babysit a PR.
+description: Monitor the user's own pull request through review and CI, fixing findings. Use when the user asks to monitor, watch, or babysit a PR they own or took over. For someone else's PR, use `full-review` or `review-followup`. Author lane.
 ---
 
 # Babysit PR

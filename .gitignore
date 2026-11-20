@@ -10,6 +10,7 @@
 .config/configstore/
 .config/git/
 .config/raycast/extensions/
+.config/openchamber/
 .config/stack-sandbox/
 .config/tcld/
 .config/temporalio/
@@ -17,3 +18,5 @@
 !.config/tmux/tmux.conf
 
 .zshenv
+
+.agents/.obsidian/

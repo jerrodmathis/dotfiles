@@ -86,6 +86,7 @@ Ambition without discipline turns into architecture astronautics. Every proposed
 - **Be proportional.** A 20-line PR doesn't earn a repo-wide rewrite; list that as a follow-up.
 - **Be concrete.** Show the sketch (signatures, before/after snippet), not "consider refactoring".
 - **Be verified.** Only claim a helper/pattern "already exists" after grepping and finding it.
+- **Verify before surfacing.** No finding labeled `[Unverified]` or `[Inference]` reaches the output. Verify it by grep, docs, or running it. If that fails, move it to a "Questions for the author" list.
 - **Respect repo rules.** Don't flag patterns the repo's docs endorse. Skip anything lint/prettier/tsc already enforces.
 
 Skip naming/formatting nits unless there's nothing structural to say.
